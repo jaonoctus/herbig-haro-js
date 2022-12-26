@@ -1,0 +1,16 @@
+{
+  "name": "herbig-haro",
+  "version": "0.1.0",
+  "author": "jaonoctus <jaonoctus@protonmail.com>",
+  "license": "MIT",
+  "description": "BTRFS CLI",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.20"
+  },
+  "dependencies": {
+    "commander": "9.4.1"
+  }
+}
