@@ -15,14 +15,18 @@ build() {
         --public \
         src/index.js
     printf "# DONE: binaries built.\n"
-    
-    printf "# START: generating checksums...\n"
-    sha256sum "${output_folder}/"* > ./bin/SHA256SUMS
-    printf "# DONE: SHA256SUMS generated.\n"
 
-    printf "# START: creating a signature...\n"
-    gpg --detach-sign --armor ./bin/SHA256SUMS
-    printf "# DONE: checksum file signed.\n"
+    (
+        cd "${output_folder}"
+
+        printf "# START: generating checksums...\n"
+        sha256sum * > SHA256SUMS
+        printf "# DONE: SHA256SUMS generated.\n"
+
+        printf "# START: creating a signature...\n"
+        gpg --detach-sign --armor SHA256SUMS
+        printf "# DONE: checksum file signed.\n"
+    )
 }
 
 build
