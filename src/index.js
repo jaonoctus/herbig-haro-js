@@ -7,7 +7,7 @@ async function main() {
     
     program
         .name('hh')
-        .description('Herbig-Haro: a BTRFS interactive cli')
+        .description('Herbig-Haro: a BTRFS interactive CLI')
         .version(version, '-v, --version')
     
     program.parse(process.argv)
